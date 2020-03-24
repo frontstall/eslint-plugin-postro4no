@@ -1,6 +1,6 @@
 {
   "name": "eslint-plugin-postro4no",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "warns about using three or more items (function args, object props) in one line",
   "keywords": [
     "eslint",
