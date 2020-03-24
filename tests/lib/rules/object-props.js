@@ -1,7 +1,10 @@
+const path = require('path');
 const { RuleTester } = require('eslint');
 const rule = require('../../../lib/rules/object-props');
 
-const tester = new RuleTester({ parserOptions: { ecmaVersion: 9 } });
+const tester = new RuleTester({
+  parserOptions: { ecmaVersion: 9 },
+});
 
 tester.run('object', rule, {
   valid: [
@@ -41,6 +44,17 @@ tester.run('object', rule, {
           c: { q, y = 44 },
         })  { return _.sap(array, cb); }
       `,
+    },
+    {
+      code: `
+        const {
+          forStatsWidget,
+          isChecked,
+          isTeamStats,
+          onClick,
+        } = useShortStats(props)
+      `,
+      parser: path.resolve(__dirname, '../../..', 'node_modules', '@typescript-eslint/parser'),
     },
   ],
   invalid: [
