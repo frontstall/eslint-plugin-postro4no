@@ -1,7 +1,7 @@
 const { RuleTester } = require('eslint');
 const rule = require('../../../lib/rules/object-props');
 
-const tester = new RuleTester({ parserOptions: { ecmaVersion: 6 } });
+const tester = new RuleTester({ parserOptions: { ecmaVersion: 9 } });
 
 tester.run('object', rule, {
   valid: [
@@ -46,11 +46,11 @@ tester.run('object', rule, {
   invalid: [
     {
       code: 'const x = { a, b, c }',
-      errors: [{ messageId: 'objectLineByLine' }],
+      errors: [{ messageId: 'object' }],
     },
     {
       code: 'function foo ({ a, b, c }) { _.map(array, cb); }',
-      errors: [{ messageId: 'objectLineByLine' }],
+      errors: [{ messageId: 'object' }],
     },
     {
       code: `
@@ -59,13 +59,13 @@ tester.run('object', rule, {
           b, d,
         }
       `,
-      errors: [{ messageId: 'objectLineByLine' }],
+      errors: [{ messageId: 'object' }],
     },
     {
       code: `
         const y = ({ a, b: { q, w = true, y } }) => {}
       `,
-      errors: [{ messageId: 'objectLineByLine' }],
+      errors: [{ messageId: 'object' }],
     },
   ],
 });
