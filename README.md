@@ -29,3 +29,19 @@ Add `postro4no` to the plugins section of your `.eslintrc` configuration file. Y
     ]
 }
 ```
+
+Then configure the rules you want to use under the rules section.
+
+```json
+{
+    "rules": {
+        "postro4no/import": "warn"
+    }
+}
+```
+
+## Supported Rules
+
+* "postro4no/import"
+* "postro4no/object-props"
+* "postro4no/function-args"
