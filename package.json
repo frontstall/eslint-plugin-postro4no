@@ -8,6 +8,10 @@
     "eslint-plugin"
   ],
   "author": "Roman Makarov",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/frontstall/eslint-plugin-postro4no"
+  },
   "main": "lib/index.js",
   "scripts": {
     "test": "mocha tests --recursive"
